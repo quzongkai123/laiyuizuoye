@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.js">
+    </script>
+
+<style>
+   .max-header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background-color: #fff;
+            width:100%;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .main-header{
+            margin-top:10px;
+            font-size: 14px;
+            color: #404040;
+        }
+        .header-logo img{
+            margin-left: 20%;
+            text-align: center;
+            width: 115px;
+            height: 35px;
+        }
+        .header-tittle li{
+            float: left;
+            margin-left:20px;
+            padding-left: 20px;
+        }
+        .header-tittle a:hover{
+            color: #ff4f4c;
+        }
+        .header-tittle a{
+            display: block;
+            margin-top: 8px;
+        }
+        .header-home{
+            display: none;
+        }
+
+        .header-app .app-tubiao div{
+            font-size: 25px;
+            color: #9c9c9c;
+            margin-right: 30px;
+            margin-top: 8px;
+            float: left;
+        }
+        .ge a{
+            color: #9c9c9c;
+            display: block;
+            margin-top:-6px;
+            font-size: 30px;
+        }
+        .header-app .app-button{
+            float: left;
+        }
+        .app-button button:nth-of-type(1){
+            background-color: #fff;
+            border: 1px solid #ff4f4c;
+        }
+        .app-button button:nth-of-type(2) a{
+            color: #fff;
+        }
+        .app-button button:nth-of-type(1):hover a{
+            color: #fff;
+        }
+        .app-button button:nth-of-type(1):hover{
+            background-color: #ff4f4c;
+        }
+        .app-dl a{
+            color: #ff4f4c;
+        }
+        .language{
+            text-align: center;
+            position: absolute;
+            z-index: 3;
+            top:25px;
+            left: -25px;
+            width: 70px;
+            background-color: #fff;
+            border: 1px solid #9c9c9c;
+            box-shadow: 0px 0px 8px #ddd;
+            display: none;
+        }
+        .language a{
+            font-size: 15px;
+        }
+        .language li:nth-of-type(1) a{
+            color:#ff4f4c;
+        }
+        .app-earth:hover .language{
+            display: block;
+        }
+        .app-download{
+            text-align: center;
+            position: absolute;
+            z-index: 3;
+            top:31px;
+            left: -25px;
+            width: 240px;
+            height: 307px;
+            background-color: #fff;
+            border: 1px solid #9c9c9c;
+            box-shadow: 0px 0px 8px #ddd;
+            display: none;
+        }
+        .app-download h3{
+            margin: 20px 0 10px 0;
+            font-size: 14px;
+            color: #404040;
+        }
+        .app-download img{
+            width: 160px;
+            height: 160px;
+        }
+        .app-download button {
+            padding-bottom: 5px;
+            color: #fff;
+            background-color: #ff4f4c;
+            border: #ff4f4c;
+            width: 160px;
+            height: 35px;
+        }
+        .app-download button:nth-of-type(2):hover{
+            color: #fff;
+            background-color: #ff4f4c;
+        }
+        .app-download button:nth-of-type(2){
+            background-color: #fff;
+            color: #ff4f4c;
+            border: 1px solid #ff4f4c;
+        }
+        .app-iphone:hover .app-download{
+            display: block;
+        }
+        @media screen and (max-width:1000px){
+            .header-tittle{
+                display: none;
+            }
+            .header-home{
+                display: block;
+            }
+            .home-icon{
+                padding-left: 50px;
+                font-size: 30px;
+            }
+            .home-icon ul{
+                background: #fff;
+                width: 100%;
+                position: absolute;
+            }
+            .home-icon li{
+                text-align: center;
+                padding: 5px 5px 5px 5px;
+                font-size: 18px;
+                border-bottom: 1px solid #9b9b9b;
+                display: none;
+            }
+            .home-icon li:nth-of-type(5){
+                border-bottom: none;
+            }
+            .home-icon li:hover{
+                border-left: 5px solid #ff4f4c;
+            }
+            .home-icon a:hover{
+                color: #ff4f4c;
+            }
+            .home-icon a{
+                color: #9b9b9b;
+            }
+            .home-icon:hover .home-ul>li{
+                display: block;
+            }
+        }
+        @media screen and (max-width:750px){
+            .app-tubiao{
+                display: none;
+                }
+                .shiyong{
+                    display: none;
+                    }
+                   
+                    .zhuce{
+                        display: none;
+                    }
+                   
+
+                }
+                
+            
+        }
+        @media screen and (max-width:500px){
+            .header-home{
+                display: none;
+            }
+            .app-button{
+                margin-left: 30px;
+            }
+            .zhuce{
+                display: none;
+            } 
+        }
+    
+
+
+.quanzhi
+{
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    background-color:rgb(245, 245, 247);
+    text-align: center;
+
+}
+.header h1{
+    color: rgb(51, 54, 53);
+    margin-top: 60px;
+    text-align: center;
+    font-size: 30px;
+}
+.header p{
+    font-size: 15px;
+    text-align: center;
+    color: rgb(165, 167, 170);
+    margin-top: 25px;
+}
+.footer img{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#k{
+    display:none;
+    
+
+}
+#k p{
+    color: rgb(144, 148, 151);
+    text-align: center
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="yemian">
+    <header class="max-header layui-container">
+        <div class="main-header layui-row">
+            <div class="header-logo layui-col-lg3 layui-col-md2 layui-col-sm2 layui-col-xs3">
+                <img src="./layui/images/chjjl-logo..png" alt="">
+            </div>
+            <ul class="header-tittle layui-col-lg6 layui-col-md6">
+                <li>
+                    <a href="">简历模板</a>
+                </li>
+                <li>
+                    <a href="">求职信</a>
+                </li>
+                <li>
+                    <a href="">简历攻略</a>
+                </li>
+                <li>
+                    <a href="">简历诊断</a>
+                </li>
+                <li>
+                    <a href="">名企内推</a>
+                </li>
+            </ul>
+            <div class="header-home layui-col-lg6 layui-col-md6 layui-col-sm5 layui-col-xs4">
+                <div class="home-icon layui-icon layui-icon-spread-left">
+                    <ul class="home-ul">
+                        <li>
+                            <a href="">简历模板</a>
+                        </li>
+                        <li>
+                            <a href="">求职信</a>
+                        </li>
+                        <li>
+                            <a href="">简历攻略</a>
+                        </li>
+                        <li>
+                            <a href="">简历诊断</a>
+                        </li>
+                        <li>
+                            <a href="">名企内推</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-app layui-col-lg3 layui-col-md4 layui-col-sm5 layui-col-xs5">
+                <div class="app-tubiao">
+                    <div class="app-earth layui-icon layui-icon-website">
+                        <div class="language">
+                            <ul>
+                                <li><a href="">中文</a></li>
+                                <li><a href="">EN</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="app-iphone layui-icon layui-icon-cellphone">
+                        <div class="app-download">
+                            <h3>扫码下载App 同步编辑</h3>
+                            <img src="./layui/images/appDownloadIcon.png" alt="">
+                            <button style="margin: 10px 0 0 5%;" class="layui-btn layui-btn-primary">App下载</button>
+                            <button style="margin: 10px 0 0 5%;" class="layui-btn layui-btn-primary">微信版</button>
+                        </div>
+                    </div>
+                    <div class="ge">
+                        <a href="">|</a>
+                    </div>
+                </div>
+                <div class="app-button" >
+                    <button class="app-dl layui-btn layui-btn-danger"><a href="">登录</a></button>
+                    <button class="zhuce layui-btn layui-btn-danger"><a href="">注册</a></button>
+                </div>
+            </div> 
+        </div>
+    </header>
+
+
+    <div class="quanzhi">
+        <div class=" header layui-row">
+            <div class="layui-col-md12  layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12">
+                <h1>求职信Jobmail.vip专业邮箱</h1>
+                </div>
+                <div class="layui-col-md12  layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12">
+                    <p>提供多场景求职邮件模板，用一封吸引HR的求职信，助你大幅提高建立通过率</p>
+                </div>
+</div>
+<div class="  layui-col-md12  layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12 site-demo-button" id="layerDemo" style="margin-bottom: 0;margin-top: 40px;">
+    <button data-method="offset" data-type="auto" class="shiyong layui-btn layui-btn-danger layui-btn-lg" style="margin: 0 auto;">立即使用</button>
+
+
+
+
+
+    </div>
+    <div class="footer ">
+        <img src="./layui/images/浏览器_渐变2@2x.png">
+    </div>
+    </div>
+    <div id="k" style="width: 200px; height: 220px;">
+        <img style="height: 200px;width: 200px" src="./layui/images/下载.png">
+        <p>扫码关注注册专业邮箱</p>
+    </div>
+</div>
+</body>
+
+
+
+<script>
+
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+  var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+  
+  //触发事件
+  var active = {
+    setTop: function(){
+      var that = this; 
+      //多窗口模式，层叠置顶
+      layer.open({
+        type: 2 //此处以iframe举例
+        ,title: '当你选择该窗体时，即会在最顶端'
+        ,area: ['390px', '260px']
+        ,shade: 0
+        ,maxmin: true
+        ,offset: [ //为了演示，随机坐标
+          Math.random()*($(window).height()-300)
+          ,Math.random()*($(window).width()-390)
+        ] 
+        ,content: '//layer.layui.com/test/settop.html'
+        ,btn: ['继续弹出', '全部关闭'] //只是为了演示
+        ,yes: function(){
+          $(that).click(); 
+        }
+        ,btn2: function(){
+          layer.closeAll();
+        }
+        
+        ,zIndex: layer.zIndex //重点1
+        ,success: function(layero){
+          layer.setTop(layero); //重点2
+        }
+      });
+    }
+    ,confirmTrans: function(){
+      //配置一个透明的询问框
+      layer.msg('大部分参数都是可以公用的<br>合理搭配，展示不一样的风格', {
+        time: 20000, //20s后自动关闭
+        btn: ['明白了', '知道了', '哦']
+      });
+    }
+    ,notice: function(){
+      //示范一个公告层
+      layer.open({
+        type: 1
+        ,title: false //不显示标题栏
+        ,closeBtn: false
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+        ,btn: ['火速围观', '残忍拒绝']
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">你知道吗？亲！<br>layer ≠ layui<br><br>layer只是作为Layui的一个弹层模块，由于其用户基数较大，所以常常会有人以为layui是layerui<br><br>layer虽然已被 Layui 收编为内置的弹层模块，但仍然会作为一个独立组件全力维护、升级。<br><br>我们此后的征途是星辰大海 ^_^</div>'
+        ,success: function(layero){
+          var btn = layero.find('.layui-layer-btn');
+          btn.find('.layui-layer-btn0').attr({
+            href: 'http://www.layui.com/'
+            ,target: '_blank'
+          });
+        }
+      });
+    }
+    ,offset: function(othis){
+      var type = othis.data('type')
+      ,text = othis.text();
+      
+      layer.open({
+        type: 1
+        ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+        ,id: 'layerDemo'+type //防止重复弹出
+        ,content: $('#k')
+        ,btn: '其他注册方式'
+        ,btnAlign: 'c' //按钮居中
+        ,shade: 0 //不显示遮罩
+        ,yes: function(){
+          layer.closeAll();
+        }
+      });
+    }
+  };
+  
+  $('#layerDemo .layui-btn').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  
+});
+</script>
+</html>
